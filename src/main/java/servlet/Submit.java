@@ -75,7 +75,6 @@ public class Submit extends HttpServlet {
         //redirect to confirm.jsp 
         RequestDispatcher rd = request.getRequestDispatcher("/RequestConfirmation.jsp");
         rd.forward(request, response);
-       // response.sendRedirect("ViewAllData.jsp");
       } else {
         //create some error redirect or error message.
         logger.log(Level.SEVERE, "Can't redirect");

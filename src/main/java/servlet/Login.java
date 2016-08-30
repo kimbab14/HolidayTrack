@@ -20,7 +20,7 @@ import utils.Validate;
 @WebServlet("/Login")
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	public final int res = 1;
+	//public final int res = 1;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -61,12 +61,15 @@ public class Login extends HttpServlet {
         logger.log(Level.WARNING, "Can't forward request and response.", e);
       }
     } else {
-      logger.log(Level.WARNING, "Can't validate user.");
-      //request.setAttribute("errorMessage", "Invalid user or password");
-      //need to redirect back to login and show error.
-      request.setAttribute("errMsg", "Incorrect username or password.");
-      RequestDispatcher rd = request.getRequestDispatcher("/Login.jsp");
-      rd.forward(request, response);
+    	try {
+	      logger.log(Level.WARNING, "Can't validate user.");
+	      //need to redirect back to login and show error.
+	      request.setAttribute("errMsg", "Incorrect username or password.");
+	      RequestDispatcher rd = request.getRequestDispatcher("/Login.jsp");
+	      rd.forward(request, response);
+    	} catch (Exception e) {
+    		logger.log(Level.WARNING, "Can't forward to the Login page." , e);
+    	}
     }
 	}
 }
