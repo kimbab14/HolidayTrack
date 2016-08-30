@@ -65,7 +65,7 @@ public class Submit extends HttpServlet {
     /**
      * insert user information.
      */
-    insert.Holiday(user);
+    insert.holidayInsert(user);
       /**
        * check if data is inserted into the database.
        * true - if data is inserted.

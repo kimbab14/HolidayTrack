@@ -31,7 +31,7 @@ public class InsertHolidayInfo {
    * @param user
    * @return user
    */
-  public User Holiday(User user) { 
+  public User holidayInsert(User user) { 
     try {
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     java.util.Date sdate = dateFormat.parse(user.getStartDate());
@@ -67,8 +67,8 @@ public class InsertHolidayInfo {
       if (ps != null) {
         ps.close();
       }
-    } catch (Exception exp) {
-      logger.log(Level.SEVERE, "Exception", exp);
+    } catch (Exception e) {
+      logger.log(Level.SEVERE, "Exception", e);
     }
   }
     return user; 

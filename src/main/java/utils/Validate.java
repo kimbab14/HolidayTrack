@@ -80,6 +80,12 @@ public class Validate {
     return status;
   }
   
+  /**
+   * check if the user already exists during 
+   * the registration process.
+   * @param user
+   * @return
+   */
   public boolean registerCheck(User user) {
 	  /*
 	     * calls the database connection

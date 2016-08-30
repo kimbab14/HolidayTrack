@@ -20,7 +20,7 @@ import utils.Validate;
 @WebServlet("/Login")
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	//public final int res = 1;
+	
     /**
      * @see HttpServlet#HttpServlet()
      */

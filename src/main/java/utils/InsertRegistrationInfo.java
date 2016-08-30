@@ -7,14 +7,25 @@ import java.util.logging.Logger;
 
 import bean.User;
 import conn.DbConnection;
-
+/**
+ * This class is used to register
+ * a user. 
+ * @author jelica60589
+ *
+ */
 public class InsertRegistrationInfo {
-  private static PreparedStatement ps = null;
+  private PreparedStatement ps = null;
   //create a DbConnection object
   DbConnection db = new DbConnection();
   private boolean isInserted = false;
   final Logger logger = Logger.getLogger(InsertHolidayInfo.class.getName());
   
+  /**
+   * Insert data into the t_user when the user
+   * pressed the user click on the register button.
+   * @param user
+   * @return user
+   */
   public User insertRegistration(User user) {
     try {
     //get connection
@@ -40,8 +51,8 @@ public class InsertRegistrationInfo {
           if (ps != null) {
             ps.close();
           }
-        } catch (Exception exp) {
-          logger.log(Level.SEVERE, "Exception", exp);
+        } catch (Exception e) {
+          logger.log(Level.SEVERE, "Exception", e);
         }
       }
         return user;     
