@@ -121,7 +121,7 @@ public class Validate {
 	        	try {
 	        		dbcon.getCon().close();
 	        	} catch (Exception e) {
-	        		logger.log(Level.SEVERE, "Can't close connection.");
+	        		logger.log(Level.SEVERE, "Can't close connection.", e);
 	        	}
 	        }
 	   }
