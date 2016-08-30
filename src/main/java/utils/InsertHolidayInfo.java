@@ -30,8 +30,9 @@ public class InsertHolidayInfo {
    * method that insert information into the database.
    * @param user
    * @return user
+ * @throws ParseException 
    */
-  public User holidayInsert(User user) { 
+  public User holidayInsert(User user) throws ParseException { 
     try {
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
     java.util.Date sdate = dateFormat.parse(user.getStartDate());
@@ -52,6 +53,7 @@ public class InsertHolidayInfo {
     ps.setDate(5, timeNow);
  
     int check = ps.executeUpdate();
+    //check if record is successfully inserted or not
     if(check!=0){ 
       isInserted = true;
       logger.log(Level.INFO, "Record has been inserted");
@@ -60,8 +62,6 @@ public class InsertHolidayInfo {
     }
   } catch (SQLException exp) {
     logger.log(Level.SEVERE, "Can't connect to the MySQL database.", exp);
-  } catch (ParseException exp) {
-    logger.log(Level.SEVERE, "Can't parse Date.", exp);
   } finally {
     try {
       if (ps != null) {

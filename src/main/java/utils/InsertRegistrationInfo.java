@@ -47,14 +47,20 @@ public class InsertRegistrationInfo {
       } catch (SQLException exp) {
         logger.log(Level.SEVERE, "Can't connect to the MySQL database.", exp);
       } finally {
-        try {
           if (ps != null) {
-            ps.close();
+        	  try {
+        		  ps.close();
+        	  } catch (Exception e) {
+		          logger.log(Level.SEVERE, "Exception", e);
+		      } 
+          } else if (db.getCon() != null){
+        	  try {
+        		  db.getCon().close();
+        	  } catch (Exception e) {
+        		  logger.log(Level.SEVERE, "Can't close the connection", e);
+        	  }
           }
-        } catch (Exception e) {
-          logger.log(Level.SEVERE, "Exception", e);
-        }
-      }
+      	}
         return user;     
   }
   
