@@ -4,7 +4,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import bean.User;
 import conn.DbConnection;
 /**
@@ -68,7 +67,7 @@ public class InsertRegistrationInfo {
    * check if the isInserted is true or false.
    * @return
    */
- public boolean getInsertedValue(){
+ public boolean getInsertedValue() {
   return isInserted;
  }
 }

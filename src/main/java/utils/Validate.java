@@ -105,21 +105,26 @@ public class Validate {
 	    } catch (SQLException e) {
 	     logger.log(Level.SEVERE,"Please check your SQL query.", e);
 	    } finally {
-	      try {
 	        if (ps != null) {
-	          ps.close();
-	        }
-	      } catch (Exception exp) {
-	        logger.log(Level.SEVERE, "Can't close the preparedstatment", exp);
-	      }
-	      try {
-	        if (rs != null) {
-	          rs.close();
-	        }
-	      } catch (Exception e){
+	        	try {
+	        		ps.close();
+	        	} catch (Exception exp) {
+	        		logger.log(Level.SEVERE, "Can't close the preparedstatment", exp);
+	        	}
+	        } else if (rs != null) {
+	        	try {
+	        		rs.close();
+	        } catch (Exception e){
 	        logger.log(Level.SEVERE, "Can't close the Resultser", e);
-	      }
-	    }
+	        }
+	      } else if (dbcon.getCon() != null) {
+	        	try {
+	        		dbcon.getCon().close();
+	        	} catch (Exception e) {
+	        		logger.log(Level.SEVERE, "Can't close connection.");
+	        	}
+	        }
+	   }
 	    return status;
   }
 }
