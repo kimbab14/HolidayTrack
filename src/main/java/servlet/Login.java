@@ -17,7 +17,7 @@ import utils.Validate;
 /**
  * Servlet implementation class Login
  */
-@WebServlet("/Login")
+@WebServlet({"/Login", ""})
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -31,7 +31,7 @@ public class Login extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-  @Override
+    @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	 //all code will be on the doPost
 	}
@@ -39,7 +39,7 @@ public class Login extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-  @Override
+  	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     response.setContentType("text/html");
     Validate validate = new Validate();
@@ -47,7 +47,7 @@ public class Login extends HttpServlet {
   
     String username =  request.getParameter("username");
     String password = request.getParameter("pass");
-    
+     
     User user = new User();
     user.setUsername(username);
     user.setPassword(password);

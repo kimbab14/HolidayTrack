@@ -28,7 +28,6 @@
                     <i class="form-control-feedback glyphicon glyphicon-lock"></i>
                  </div>  
                     
-                <p><input type="checkbox"> Keep me logged in</p>
                 <button type="submit" name="btnLogin" class="btn btn-lg btn-primary btn-block">Login</button>
                 <p align="center">Don't have an account ? <a href="Register.jsp">Register here</a>.</p>     
             </form>          

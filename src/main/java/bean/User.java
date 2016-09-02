@@ -5,15 +5,16 @@ package bean;
  * @author jelica60589
  *
  */
+
 public class User {
   
   /**
-   * Variables
+   * Variables.
    */
   private String username;
   private String password;
   private String fullName;
-  private int empID;
+  private int empid;
   private String startDate;
   private String endDate;
   private String submittedDate;
@@ -22,111 +23,133 @@ public class User {
   /**
    * Constructor for User that will be use for the 
    * fetching of the data to be displayed on the datatable.
-   * @param fullname
-   * @param empID
-   * @param startDate
-   * @param endDate
-   * @param dbID
-   * @param submittedDate
+   * @param fullname - fullname of the user
+   * @param empID - employee id
+   * @param startDate - start date
+   * @param endDate - end date
+   * @param dbID - ID
+   * @param submittedDate - 
    */
   public User(int dbID , int empID, String fullname, String startDate, String endDate, String submittedDate) {
     this.fullName = fullname;
-    this.empID = empID;
+    this.empid = empID;
     this.startDate = startDate;
     this.endDate = endDate;
     this.submittedDate = submittedDate;
     this.id = dbID;
   }
+  
   /**
    * another default constructor that is used
    * in the Login and Submit class.
    */
+  
   public User() {
     //default constructor 
   }
  
   /**
-   * set username
+   * set username.
    */
+  
   public void setUsername(String username) {
     this.username = username;
   }
+  
   /**
-   * get username
+   * get username.
    */
+  
   public String getUsername() {
     return username;
   }
+  
   /**
-   * set password
+   * set password.
    */
+  
   public void setPassword(String password) {
     this.password = password;
   }
+  
   /**
-   * get password
+   * get password.
    */
+  
   public String getPassword() {
     return password;
   }
   
   /**
-   * set fullname
+   * set fullname.
    */
+  
   public void setFullname(String fullname) {
     this.fullName = fullname;
   }
+  
   /**
-   * get fullname
+   * get fullname.
    */
+  
   public String getFullname() {
     return fullName;
   }
   
   /**
-   * set empid
+   * set empid.
    */
+  
   public void setEmpId(int empid) {
-    this.empID = empid;
-  }
-  /**
-   * get empid
-   */
-  public int getEmpId() {
-    return empID;
+    this.empid = empid;
   }
   
   /**
-   * set startdate
+   * get empid.
    */
+  
+  public int getEmpId() {
+    return empid;
+  }
+  
+  /**
+   * set startdate.
+   */
+  
   public void setStartDate(String startDate) {
     this.startDate = startDate;
   }
+  
   /**
-   * get username
+   * get username.
    */
+  
   public String getStartDate() {
     return startDate;
   }
   
   /**
-   * set enddate
+   * set enddate.
    */
+  
   public void setEndDate(String endDate) {
     this.endDate = endDate;
   }
+  
   /**
-   * get enddate
+   * get enddate.
    */
+  
   public String getEndDate() {
     return endDate;
   }
   
   /**
-   * get Submitted Date
+   * get Submitted Date.
    * @return submittedDate
    */
-  public String getDateSubmitted(){
+  
+  public String getDateSubmitted() {
     return submittedDate;
   }
   
@@ -134,6 +157,7 @@ public class User {
    * Get ID from the database.
    * @return id
    */
+  
   public int getID(){
     return id;
   }

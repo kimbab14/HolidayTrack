@@ -16,15 +16,12 @@
 <%
  String LeaveReq = "LeaveRequest.jsp";
  String viewAllData = "ViewAllData.jsp";
- //need to implement cookie here..
- String currentUser = request.getParameter("username");
 %>
    <section class="container">
             <section class="login-form">
                 <form method="POST" role="login">
                     <img src="images/logo.png" class="img-responsive" alt="" style="height:70px;"/>
-                    <div style="display: inline-block;">Welcome <%= currentUser %></div>
-                    <div style="display: inline-block; margin-left:200px;"><b><a href="SelectionButtonLogout.jsp">Logout</a></b></div>
+                    <div style="display: inline-block; margin-left:300px;"><b><a href="SelectionButtonLogout.jsp">Logout</a></b></div>
                     <button type="button" name="btnLogin" class="btn btn-lg btn-primary btn-block" onClick="JavaScript:window.location='<%= LeaveReq %>';">New Leave Request</button>
                     <button type="button" name="btnLogin" class="btn btn-lg btn-primary btn-block" onClick="JavaScript:window.location='<%= viewAllData %>';">Team Leave Plans</button>
                 </form>
