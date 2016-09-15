@@ -73,7 +73,7 @@ public class Submit extends HttpServlet {
        */
       if (insert.getInsertedValue() ? true : false) {
         //redirect to confirm.jsp 
-        RequestDispatcher rd = request.getRequestDispatcher("/RequestConfirmation.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("RequestConfirmation.jsp");
         rd.forward(request, response);
       } else {
         //create some error redirect or error message.

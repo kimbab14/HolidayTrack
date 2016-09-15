@@ -10,6 +10,7 @@
     <link href="http://fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,700,900italic,900" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="Bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body>
     <section class="container">
@@ -28,7 +29,7 @@
                     <i class="form-control-feedback glyphicon glyphicon-lock"></i>
                  </div>  
                     
-                <button type="submit" name="btnLogin" class="btn btn-lg btn-primary btn-block">Login</button>
+                <button type="submit" name="btnLogin" class="btn btn-lg btn-primary btn-block">Login <i class="fa fa-sign-in"> </i></button>
                 <p align="center">Don't have an account ? <a href="Register.jsp">Register here</a>.</p>     
             </form>          
         </section>

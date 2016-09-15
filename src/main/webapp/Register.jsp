@@ -10,6 +10,7 @@
     <link href="http://fonts.googleapis.com/css?family=Lato:100italic,100,300italic,300,400italic,400,700italic,700,900italic,900" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="Bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     
     <script>
     function ClearFields() {
@@ -21,8 +22,8 @@
 <body>
 
     <section class="container">
-            <section class="login-form">
-                <form method="POST"  action="Register" role="login" id="form">
+            <section class="Register-form">
+                <form method="POST"  action="Register" role="register" id="form">
                     <img src="images/logo.png" class="img-responsive" alt="" style="height:70px;"/>
                         
                     <span style="color:red;">${errMsg}</span> 
@@ -37,11 +38,10 @@
                     <i class="form-control-feedback glyphicon glyphicon-lock"></i>
                     </div>  
                     
-                    <button type="submit" name="btnRegister" class="btn btn-primary btn-lg ">Register</button>
-                     <button type="button" onclick="ClearFields();" name="btnCancel" class="btn btn-primary btn-lg" style="margin-left:5px;">Clear</button>
+                    <button type="submit" name="btnRegister" class="btn btn-primary btn-lg ">Register  <i class="fa fa-user-plus "> </i></button>
+                    <button type="button" onclick="ClearFields();" name="btnCancel" class="btn btn-primary btn-lg" style="margin-left:5px;">Clear</button>
                                
                     <p align="center">Already have an account ? <a href="Login.jsp">Login here</a>.</p>                   
-       
                 </form>          
             </section>
     </section>

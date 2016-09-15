@@ -32,14 +32,6 @@ public class Register extends HttpServlet {
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-    @Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//doPost
-	}
-
-	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	@Override
@@ -56,20 +48,22 @@ public class Register extends HttpServlet {
 		
 		InsertRegistrationInfo reg = new InsertRegistrationInfo();
 		Validate validate = new Validate();
-		  if (validate.registerCheck(user) ? true : false ) {
+		  
+		if (validate.registerCheck(user) ? true : false ) {
 			  request.setAttribute("errMsg", "Username already exists.");
 		      RequestDispatcher rd = request.getRequestDispatcher("/Register.jsp");
 		      rd.forward(request, response);
 		  }else {
-		  reg.insertRegistration(user);
-		
-		  if (reg.getInsertedValue() ? true : false) {
-		  logger.log(Level.INFO, "Inserted data");
-		  RequestDispatcher rd = request.getRequestDispatcher("RegistrationSuccess.jsp");
-		  rd.include(request, response);
-		} else {
-		  logger.log(Level.INFO, "registration unsuccessful");
-		} }
+			  reg.insertRegistration(user);
+		  
+			  if (reg.getInsertedValue() ? true : false) {
+				  logger.log(Level.INFO, "Inserted data");
+				 RequestDispatcher rd = request.getRequestDispatcher("RegistrationSuccess.jsp");
+				  rd.forward(request, response);
+			  } else {
+				  logger.log(Level.INFO, "registration unsuccessful");
+			  } 
+		  }
 		} catch (Exception ex) {
 		  logger.log(Level.SEVERE, "Error occur.", ex);
 		}

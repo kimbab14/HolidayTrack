@@ -53,10 +53,8 @@ public class Login extends HttpServlet {
     user.setPassword(password);
     
     if (validate.findUser(user) ? true : false ) {
-      //if true then redirect to holiday tracker page
-      RequestDispatcher rs = request.getRequestDispatcher("SelectButton.jsp");
       try {
-      rs.forward(request, response);
+       response.sendRedirect("SelectButton.jsp");  
       } catch (Exception e) {
         logger.log(Level.WARNING, "Can't forward request and response.", e);
       }

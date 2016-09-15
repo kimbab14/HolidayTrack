@@ -12,7 +12,6 @@ import conn.DbConnection;
 /**
  * Class that will fetch data from db
  * to be use in the datatable.
- * 
  */
 public class FetchDataFromDb {
   /**
@@ -50,4 +49,11 @@ public class FetchDataFromDb {
     }
     return ls;
   }
+  /*
+  private User populateUserVO() {
+	// TODO Auto-generated method stub
+	  User user = new User();
+	  user.setEmpId(rs.getInt(2));	
+  }*/
+  
 }

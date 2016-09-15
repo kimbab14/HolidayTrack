@@ -16,29 +16,26 @@
  <script type="text/javascript">
         $(document).ready(function () {
             $("#hols").dataTable({
-            	  "aaSorting": [[0,'DESC']],
-            	  "columnDefs": [
-            	                 {
-            	                     "targets": [ 0 ],
-            	                     "visible": false,
-            	                     "searchable": false
-            	                 }
-            	                ]
+            	  "aaSorting": [[5,'ASC']]
             });
         });
  </script>
 </head>
 
 <body>
-<div style="width:700px; margin-left:20px; margin-top:20px;">
+<%
+ String goBack = "SelectButton.jsp";
+%>
 
-<div style=" display: inline-block; width: 274px"><h1>Holiday Tracker</h1></div>
-<div style=" display: inline-block; height: 37px; margin-left:375px"><b><a href="Logout.jsp">Logout</a></b></div>
+<div style="width:700px; margin-left:20px; margin-top:20px;">
+<button type="button" style="border: 1px black; display: inline-block; " class="btn btn-secondary btn-lg btn-block" onClick="JavaScript:window.location='<%= goBack %>';">Go back </button>
+<div style=" display: inline-block; height: 37px; margin-left:570px"><b><a href="Logout.jsp">Logout</a></b></div>
 <div></div>
+<div style="width:274px;align:center"><h1>Holiday Tracker</h1></div>
+<br/>
 <table id="hols" class="ui celled table"  cellspacing="0" width="100%">
 		            <thead>
 		                <tr>
-		                    <th><u>ID</u></th>
 		                    <th><u>Employee ID</u></th>
 		                    <th><u>Full Name</u></th>
 		                    <th><u>Start Date</u></th>
@@ -49,7 +46,6 @@
 		            <tbody>
 		          		<% for(User c: FetchDataFromDb.getHolsData()){ %>
 						  <tr>
-						    <td><%=c.getID()%></td>
 						    <td><%=c.getEmpId()%></td>
 						    <td><%=c.getFullname()%></td>
 						    <td><%=c.getStartDate()%></td>

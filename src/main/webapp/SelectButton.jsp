@@ -18,8 +18,8 @@
  String viewAllData = "ViewAllData.jsp";
 %>
    <section class="container">
-            <section class="login-form">
-                <form method="POST" role="login">
+            <section class="Select-form">
+                <form method="POST" role="select">
                     <img src="images/logo.png" class="img-responsive" alt="" style="height:70px;"/>
                     <div style="display: inline-block; margin-left:300px;"><b><a href="SelectionButtonLogout.jsp">Logout</a></b></div>
                     <button type="button" name="btnLogin" class="btn btn-lg btn-primary btn-block" onClick="JavaScript:window.location='<%= LeaveReq %>';">New Leave Request</button>

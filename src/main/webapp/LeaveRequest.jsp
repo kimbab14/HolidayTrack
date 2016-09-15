@@ -42,7 +42,7 @@
             
             $('#empnumber').keydown(function (e) {
                 // Allow: backspace, delete, tab, escape, enter and .
-                if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110]) !== -1 ||
                      // Allow: Ctrl+A, Command+A
                     (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) || 
                      // Allow: home, end, left, right, down, up
@@ -60,9 +60,11 @@
      
 </head>
 <body>
-
+<%
+ String goBack = "SelectButton.jsp";
+%>
     <section class="container">
-            <section class="login-form">
+            <section class="leave-form">
                 <form method="POST"  action="Submit" role="login">
                     <img src="images/logo.png" class="img-responsive" alt="" style="height:70px;"/>
                     
@@ -72,7 +74,7 @@
                     </div>  
                     
                     <div class="form-group has-feedback has-feedback-left">
-                    <input type="text" id="empnumber" name="empnum" placeholder="Employee Number" required class="form-control input-lg" />
+                    <input type="text" id="empnumber" maxlength="5" name="empnum" placeholder="Employee Number" required class="form-control input-lg" />
                     <i class="form-control-feedback glyphicon glyphicon-user"></i>
                     </div>  
                     
@@ -87,7 +89,7 @@
                     </div>  
                     
                     <button type="submit" name="Submit" class="btn btn-lg btn-primary btn-block">Submit</button>
-                    
+        			<button type="button" style="border-color: #33a6cc;" class="btn btn-secondary btn-lg btn-block" onClick="JavaScript:window.location='<%= goBack %>';">Go back </button>
                 </form>
             </section>
     </section>
