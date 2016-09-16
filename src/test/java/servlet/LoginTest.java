@@ -10,9 +10,8 @@ import bean.User;
 import conn.DbConnection;
 import utils.Validate;
 /**
- * class used for JUnit test
+ * class used for testing the Login
  * @author jelica60589
- *
  */
 
 public class LoginTest {
