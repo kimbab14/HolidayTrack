@@ -29,8 +29,8 @@ public class RegisterTest {
 		dbcon.getCon();
 					
 		//set the value
-		user.setUsername("User4");
-		user.setPassword("user4");
+		user.setUsername("User6");
+		user.setPassword("user6");
 			
 		assertNotNull(user);
 		equals(user);
