@@ -11,6 +11,7 @@ import conn.DbConnection;
 import utils.Validate;
 /**
  * class used for testing the Login
+ * and added this to test the jenkins
  * @author jelica60589
  */
 
