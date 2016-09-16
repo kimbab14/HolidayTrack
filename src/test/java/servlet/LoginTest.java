@@ -36,8 +36,8 @@ public class LoginTest {
 		//user
 		User user = new User();
 		//set the value
-		user.setUsername("test");
-		user.setPassword("test");
+		user.setUsername("User4");
+		user.setPassword("User4");
 		
 		//Validate class
 		Validate vd = new Validate();
